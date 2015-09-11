@@ -80,8 +80,14 @@ a {
 }
 
 .full-height {
-  min-height: 100vh;
-  width: 100%;
+  &-before-nav {
+    min-height: 100vh;
+  }
+
+  // Handle spacing when nav is fixed
+  &, .f-topbar-fixed &-before-nav {
+    min-height: calc(100vh - 60px);
+  }
 }
 
 .home-top {
