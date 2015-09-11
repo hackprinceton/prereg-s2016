@@ -109,6 +109,10 @@ a {
   }
 
   &-brand {
+    &-logo {
+      max-width: 42%;
+    }
+
     &-title {
       font-family: $font-header;
       font-size: 4.2rem;
