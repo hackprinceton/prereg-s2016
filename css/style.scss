@@ -56,25 +56,21 @@ a {
 }
 
 .subscribe {
-  font-size: 0;
-
-  // Using table + float to avoid a bug where input field is shifted by 1px
-  display: table;
-  margin: 0 auto;
+  margin: 20px auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
 
   &-input {
     @include rounded-form-element;
-    width: 400px !important;
-    float: left;
-    margin-right: 3px !important;
+    margin: 0 3px 0 0 !important;
   }
 
   &-button {
     @include rounded-form-element;
-    @extend .button-orange;
-
-    float: left;
     width: 80px;
+    margin: 0;
 
     > * {
       font-size: 30px !important;
@@ -90,9 +86,12 @@ a {
 
 .home-top {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &-upper {
-    margin-top: 20px;
+    margin: 20px 0;
   }
 
   &-date {
@@ -105,8 +104,6 @@ a {
   }
 
   &-brand {
-    margin-bottom: 70px;
-
     &-title {
       font-family: $font-header;
       font-size: 4.2rem;
