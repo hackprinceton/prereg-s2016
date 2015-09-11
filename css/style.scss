@@ -1,0 +1,252 @@
+@import "hp-colors";
+
+@import "_MyFontsWebfontsKit.css";
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+// TODO: update to final fonts
+$font-header: "Dense-Regular", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-body: "proxima-nova", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+
+// TODO: constants should derive directly from Foundation settings
+$row-max-width: 62.5rem;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-body;
+}
+
+@mixin rounded-form-element {
+  border-width: 0 !important;
+  border-radius: 6px !important;
+  padding: 20px !important;
+  height: auto !important;
+  font-size: 1.05rem !important;
+  box-shadow: none !important;
+}
+
+.button-orange {
+  background-color: $hp-orange;
+
+  &:hover, &:focus {
+    background-color: scale-color($hp-orange, $lightness: -20%);
+  }
+}
+
+a {
+  color: $hp-orange;
+  transition: color 300ms ease-out;
+
+  &:hover, &:focus {
+    color: scale_color($hp-orange, $lightness: -14%);
+  }
+
+  &.color-white {
+    color: white;
+
+    &:hover, &:focus {
+      color: scale_color(white, $lightness: -14%);
+    }
+  }
+}
+
+.color-gray {
+  background-color: $hp-gray;
+  color: white;
+}
+
+.subscribe {
+  font-size: 0;
+
+  // Using table + float to avoid a bug where input field is shifted by 1px
+  display: table;
+  margin: 0 auto;
+
+  &-input {
+    @include rounded-form-element;
+    width: 400px !important;
+    float: left;
+    margin-right: 3px !important;
+  }
+
+  &-button {
+    @include rounded-form-element;
+    @extend .button-orange;
+
+    float: left;
+    width: 80px;
+
+    > * {
+      font-size: 30px !important;
+      line-height: 0 !important;
+    }
+  }
+}
+
+.full-height {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.home-top {
+  overflow: hidden;
+
+  &-upper {
+    margin-top: 20px;
+  }
+
+  &-date {
+    font-family: $font-body;
+    //font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: inherit;
+  }
+
+  &-brand {
+    margin-bottom: 70px;
+
+    &-title {
+      font-family: $font-header;
+      font-size: 4.2rem;
+      letter-spacing: 5px;
+      color: inherit;
+      margin: 10px;
+    }
+  }
+
+  &-message {
+    margin-top: 10px;
+    font-size: 1.1rem;
+  }
+}
+
+.home-section {
+  $home-section-title-width: 10rem;
+
+  padding-top: 70px;
+
+  &-title {
+    font-family: $font-header;
+    font-size: 3rem;
+    line-height: 1.2;
+    width: calc(50% - (62.5rem / 2) + 10rem);
+    min-width: 10rem;
+    text-align: right;
+    border-bottom: 4px solid $hp-orange;
+    margin-bottom: 30px;
+  }
+
+  &-orange {
+    background-color: $hp-orange;
+
+    .home-section-title {
+      border-bottom-color: white;
+    }
+  }
+}
+
+.schedule {
+  &-day-column {
+    text-transform: uppercase;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 20px;
+  }
+
+  &-table-column {
+    padding-left: 20px;
+  }
+
+  &-table {
+    table-layout: fixed;
+    width: 100%;
+
+    tr:not(:last-child) td {
+      padding-bottom: 0.5rem;
+    }
+
+    tr:first-child {
+      td:nth-child(1) {
+        width: 25%;
+      }
+    }
+  }
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); // TODO: ensure autoprefixer is in use
+}
+
+.vertical-bar {
+  &:before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+  }
+
+  &-orange {
+    &:before {
+      background-color: $hp-orange;
+    }
+  }
+
+  &-white {
+    &:before {
+      background-color: white;
+    }
+  }
+}
+
+.faq {
+  position: relative;
+  padding: 0 20px;
+
+  &-title {
+    font-size: inherit;
+    font-weight: bold;
+  }
+}
+
+table.plain-table {
+  border: 0;
+  border-spacing: 0;
+  margin: 0;
+
+  tr {
+    background: none;
+  }
+
+  td {
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
+.home-nav {
+  text-align: center;
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    line-height: 60px;
+    font-family: $font-header;
+    font-size: 1.6rem;
+    padding: 0 20px;
+  }
+}
