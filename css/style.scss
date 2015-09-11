@@ -28,7 +28,7 @@ body {
 .button-orange {
   background-color: $hp-orange;
 
-  &:hover, &:focus {
+  &:hover, &:focus, &.disabled, &[disabled] {
     background-color: scale-color($hp-orange, $lightness: -20%);
   }
 }
@@ -69,12 +69,11 @@ a {
 
   &-button {
     @include rounded-form-element;
-    width: 80px;
     margin: 0;
+    padding: 0 15px !important;
 
     > * {
       font-size: 30px !important;
-      line-height: 0 !important;
     }
   }
 }
