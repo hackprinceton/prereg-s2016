@@ -128,14 +128,14 @@ a {
 .home-section {
   $home-section-title-width: 10rem;
 
-  padding-top: 70px;
+  padding: 70px 0;
 
   &-title {
     font-family: $font-header;
     font-size: 3rem;
     line-height: 1.2;
-    width: calc(50% - (62.5rem / 2) + 10rem);
-    min-width: 10rem;
+    width: calc(50% - (#{$row-max-width} / 2) + #{$home-section-title-width}); // makes it stick out $home-section-title-width into the row
+    min-width: $home-section-title-width;
     text-align: right;
     border-bottom: 4px solid $hp-orange;
     margin-bottom: 30px;
