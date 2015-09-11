@@ -151,15 +151,21 @@ a {
 }
 
 .schedule {
+  display: flex;
+  flex-direction: row;
+
   &-day-column {
     text-transform: uppercase;
     text-align: right;
     font-weight: bold;
     padding-right: 20px;
+    width: 120px;
+    flex-shrink: 0;
   }
 
   &-table-column {
     padding-left: 20px;
+    position: relative;
   }
 
   &-table {
@@ -172,7 +178,7 @@ a {
 
     tr:first-child {
       td:nth-child(1) {
-        width: 25%;
+        width: 100px;
       }
     }
   }
