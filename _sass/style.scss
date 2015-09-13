@@ -1,0 +1,271 @@
+@import "hp-colors";
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+// TODO: update to final fonts
+$font-header: "Dense-Regular", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-body: "proxima-nova", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+
+// TODO: constants should derive directly from Foundation settings
+$row-max-width: 62.5rem;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-body;
+}
+
+@mixin rounded-form-element {
+  border-width: 0 !important;
+  border-radius: 6px !important;
+  padding: 20px !important;
+  height: auto !important;
+  font-size: 1.05rem !important;
+  box-shadow: none !important;
+}
+
+.button-orange {
+  background-color: $hp-orange;
+
+  &:hover, &:focus, &.disabled, &[disabled] {
+    background-color: scale-color($hp-orange, $lightness: -20%);
+  }
+}
+
+a {
+  color: $hp-orange;
+  transition: color 300ms ease-out;
+
+  &:hover, &:focus {
+    color: scale_color($hp-orange, $lightness: -14%);
+  }
+
+  &.color-white {
+    color: white;
+
+    &:hover, &:focus {
+      color: scale_color(white, $lightness: -14%);
+    }
+  }
+}
+
+.color-gray {
+  background-color: $hp-gray;
+  color: white;
+}
+
+.subscribe {
+  margin: 20px auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  &-input {
+    @include rounded-form-element;
+    margin: 0 3px 0 0 !important;
+  }
+
+  &-button {
+    @include rounded-form-element;
+    margin: 0;
+    padding: 0 15px !important;
+
+    > * {
+      font-size: 30px !important;
+    }
+  }
+}
+
+.full-height {
+  &-before-nav {
+    min-height: 100vh;
+  }
+
+  // Handle spacing when nav is fixed
+  &, .f-topbar-fixed &-before-nav {
+    min-height: calc(100vh - 60px);
+  }
+}
+
+.home-top {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &-upper {
+    margin: 20px 0;
+  }
+
+  &-date {
+    font-family: $font-body;
+    //font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: inherit;
+  }
+
+  &-brand {
+    &-logo {
+      max-width: 42%;
+    }
+
+    &-title {
+      font-family: $font-header;
+      font-size: 4.2rem;
+      letter-spacing: 5px;
+      color: inherit;
+      margin: 10px;
+    }
+  }
+
+  &-message {
+    margin-top: 10px;
+    font-size: 1.1rem;
+  }
+}
+
+.home-section {
+  $home-section-title-width: 10rem;
+
+  padding: 70px 0;
+  background-color: white;
+  color: black;
+
+  &-title {
+    font-family: $font-header;
+    font-size: 3rem;
+    line-height: 1.2;
+    width: calc(50% - (#{$row-max-width} / 2) + #{$home-section-title-width}); // makes it stick out $home-section-title-width into the row
+    min-width: $home-section-title-width;
+    text-align: right;
+    border-bottom: 4px solid $hp-orange;
+    margin-bottom: 30px;
+  }
+
+  &-orange {
+    background-color: $hp-orange;
+    color: black;
+
+    .home-section-title {
+      border-bottom-color: white;
+    }
+  }
+}
+
+.schedule {
+  display: flex;
+  flex-direction: row;
+
+  &-day-column {
+    text-transform: uppercase;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 20px;
+    width: 120px;
+    flex-shrink: 0;
+  }
+
+  &-table-column {
+    padding-left: 20px;
+    position: relative;
+  }
+
+  &-table {
+    table-layout: fixed;
+    width: 100%;
+
+    tr:not(:last-child) td {
+      padding-bottom: 0.5rem;
+    }
+
+    tr:first-child {
+      td:nth-child(1) {
+        width: 100px;
+      }
+    }
+  }
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); // TODO: ensure autoprefixer is in use
+}
+
+.vertical-bar {
+  &:before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+  }
+
+  &-orange {
+    &:before {
+      background-color: $hp-orange;
+    }
+  }
+
+  &-white {
+    &:before {
+      background-color: white;
+    }
+  }
+}
+
+.faq {
+  position: relative;
+  padding: 0 20px;
+
+  &-title {
+    font-size: inherit;
+    font-weight: bold;
+  }
+}
+
+table.plain-table {
+  border: 0;
+  border-spacing: 0;
+  margin: 0;
+
+  tr {
+    background: none;
+  }
+
+  td {
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
+.home-nav {
+  text-align: center;
+  transition: background-color 300ms ease-out;
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    line-height: 60px;
+    font-family: $font-header;
+    font-size: 1.6rem;
+    padding: 0 20px;
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
