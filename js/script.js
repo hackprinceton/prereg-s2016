@@ -80,6 +80,26 @@
 
     $(function () {
         new SubscribeForm($("#subscribe"));
+
+        var homeNavHeight = $(".home-nav").height();
+        $("[id!='']").each(function (i) {
+            var $elem = $(this);
+            var id = $elem.attr("id");
+            var $targetNav = $(".home-nav").find("a[href='#" + id + "']");
+            if ($targetNav.length) {
+                var position = $elem.position();
+                $elem.scrollspy({
+                    min: position.top - homeNavHeight,
+                    max: position.top - homeNavHeight + $elem.outerHeight(),
+                    onEnter: function (element, position) {
+                        $(".home-nav")
+                            .css({"background-color": $elem.css("background-color")})
+                            .find("a").removeClass("active").css({"color": $elem.css("color")});
+                        $targetNav.addClass("active");
+                    }
+                });
+            }
+        });
     });
 
 })();

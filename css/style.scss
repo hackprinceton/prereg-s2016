@@ -132,6 +132,8 @@ a {
   $home-section-title-width: 10rem;
 
   padding: 70px 0;
+  background-color: white;
+  color: black;
 
   &-title {
     font-family: $font-header;
@@ -146,6 +148,7 @@ a {
 
   &-orange {
     background-color: $hp-orange;
+    color: black;
 
     .home-section-title {
       border-bottom-color: white;
@@ -244,6 +247,7 @@ table.plain-table {
 
 .home-nav {
   text-align: center;
+  transition: background-color 300ms ease-out;
 
   ul {
     list-style: none;
@@ -260,5 +264,9 @@ table.plain-table {
     font-family: $font-header;
     font-size: 1.6rem;
     padding: 0 20px;
+
+    &.active {
+      font-weight: bold;
+    }
   }
 }
