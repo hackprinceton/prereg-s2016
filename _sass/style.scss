@@ -210,6 +210,14 @@ a {
     text-align: right;
     border-bottom: 4px solid $hp-orange;
     margin-bottom: 30px;
+
+    @include only-small {
+      width: auto;
+      min-width: 0;
+      padding-left: 0.9375rem;
+      float: left;
+      clear: both;
+    }
   }
 
   &-orange {
