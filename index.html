@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -101,7 +103,21 @@
     <div id="sponsors" class="home-section">
       <h1 class="home-section-title">Sponsors</h1>
       <div class="row">
-
+        <div class="large-12 columns">
+          <div class="sponsors text-center">
+            {% for tier_hash in site.data.tiers %}
+            {% assign tier_name = tier_hash[0] %}
+            {% assign tier = tier_hash[1] %}
+            <div class="sponsors-{{tier_name}}">
+              {% for sponsor in tier %}
+              <a href="{{sponsor.Website}}" target="_blank">
+                <img src="img/sponsors/{{sponsor.Logo}}" alt="{{sponsor.Sponsor}}" />
+              </a>
+              {% endfor %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
 

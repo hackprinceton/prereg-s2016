@@ -269,3 +269,52 @@ table.plain-table {
     }
   }
 }
+
+.sponsors {
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 60%;
+
+    img {
+      display: block;
+      width: 100%;
+      border: 0;
+    }
+  }
+
+  @media (min-width: 64.063em) {
+    a {
+      padding: 50px;
+    }
+  }
+
+  @media (min-width: 64.063em) {
+    .sponsors-title a {
+      width: 80%;
+    }
+    .sponsors-series-b a {
+      width: 50%;
+    }
+    .sponsors-series-a a {
+      width: 32%;
+    }
+    .sponsors-angel a {
+      width: 28%;
+    }
+    .sponsors-seed a {
+      width: 26%;
+    }
+    .sponsors-other a {
+      width: 23%;
+    }
+    .sponsors-princeton a {
+      width: 25%;
+    }
+  }
+}
