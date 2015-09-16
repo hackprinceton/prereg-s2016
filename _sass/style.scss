@@ -292,6 +292,8 @@ table.plain-table {
 .home-nav {
   text-align: center;
   transition: background-color 300ms ease-out;
+  overflow-x: auto;
+  white-space: nowrap;
 
   ul {
     list-style: none;
