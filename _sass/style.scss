@@ -194,6 +194,10 @@ a {
   display: flex;
   flex-direction: row;
 
+  @include not-large {
+    flex-direction: column;
+  }
+
   &-day-column {
     text-transform: uppercase;
     text-align: right;
@@ -201,6 +205,11 @@ a {
     padding-right: 20px;
     width: 120px;
     flex-shrink: 0;
+
+    @include not-large {
+      text-align: left;
+      margin-bottom: 10px;
+    }
   }
 
   &-table-column {
