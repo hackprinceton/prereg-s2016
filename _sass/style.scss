@@ -193,6 +193,7 @@ a {
 .schedule {
   display: flex;
   flex-direction: row;
+  margin-bottom: 20px;
 
   @include not-large {
     flex-direction: column;
