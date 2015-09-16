@@ -351,6 +351,11 @@ table.plain-table {
     font-size: 1.6rem;
     padding: 0 20px;
 
+    @include only-small {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
     &.active {
       font-weight: bold;
     }
