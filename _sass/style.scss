@@ -52,7 +52,7 @@ a {
     color: scale_color($hp-orange, $lightness: -14%);
   }
 
-  &.color-white {
+  &.color-white, .home-section-orange & {
     color: white;
 
     &:hover, &:focus {

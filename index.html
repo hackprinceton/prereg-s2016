@@ -73,6 +73,15 @@
       </div>
     </div>
 
+    <div id="about" class="home-section">
+      <h1 class="home-section-title">About</h1>
+      <div class="row">
+        <div class="medium-8 medium-offset-2 end columns">
+          <p>This November 13-15, HackPrinceton will bring together over 600 of the nation's most promising developers and designers to create incredible software and hardware projects. Meet fellow hackers, learn new technologies, and hone your skills alongside seasoned mentors. Whether you’re making your first mobile app or are ready to jump onboard the most developed hardware track in the country, join us for 36 glorious hours of learning.</p>
+        </div>
+      </div>
+    </div>
+
     <div id="schedule" class="home-section">
       <h1 class="home-section-title">Schedule</h1>
       <div class="row">
@@ -95,24 +104,16 @@
       </div>
     </div>
 
-    <div id="faq" class="home-section full-height home-section-orange">
+    <div id="faq" class="home-section home-section-orange">
       <h1 class="home-section-title">FAQ</h1>
       <div class="row">
         <div class="medium-6 medium-offset-3 columns end">
+          {% for faq in site.data.faq %}
           <div class="faq vertical-bar vertical-bar-white">
-            <h2 class="faq-title">What is a hackathon?</h2>
-            <p>A hackathon is a marathon software and hardware product creation event. At HackPrinceton, you can look forward to amazing guest speakers, helpful workshops, tons of skilled mentors, and, of course, fun games and great food.</p>
+            <h2 class="faq-title">{{faq.question}}</h2>
+            <p>{{faq.answer}}</p>
           </div>
-
-          <div class="faq vertical-bar vertical-bar-white">
-            <h2 class="faq-title">What is a hackathon?</h2>
-            <p>A hackathon is a marathon software and hardware product creation event. At HackPrinceton, you can look forward to amazing guest speakers, helpful workshops, tons of skilled mentors, and, of course, fun games and great food.</p>
-          </div>
-
-          <div class="faq vertical-bar vertical-bar-white">
-            <h2 class="faq-title">What is a hackathon?</h2>
-            <p>A hackathon is a marathon software and hardware product creation event. At HackPrinceton, you can look forward to amazing guest speakers, helpful workshops, tons of skilled mentors, and, of course, fun games and great food.</p>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
