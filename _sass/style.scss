@@ -15,15 +15,7 @@ body {
   font-family: $font-body;
 }
 
-@mixin rounded-form-element {
-  border-width: 0 !important;
-  border-radius: 6px !important;
-  padding: 20px !important;
-  height: auto !important;
-  font-size: 1.05rem !important;
-  box-shadow: none !important;
-}
-
+// TODO: hardcoded values
 @mixin not-large {
   @media (max-width: 64.063em) {
     @content;
@@ -31,8 +23,28 @@ body {
 }
 
 @mixin only-large {
-  @media (min-width: 64.063em) {
+  @media (min-width: 64em) {
     @content;
+  }
+}
+
+@mixin only-small {
+  @media (max-width: 40.063em) {
+    @content;
+  }
+}
+
+@mixin rounded-form-element {
+  border-width: 0 !important;
+  border-radius: 6px !important;
+  padding: 20px !important;
+  height: auto !important;
+  font-size: 1.05rem !important;
+  box-shadow: none !important;
+
+  @include only-small {
+    padding: 15px !important;
+    font-size: 1rem !important;
   }
 }
 
@@ -83,6 +95,10 @@ a {
     margin: 0;
     padding: 0 15px !important;
 
+    @include only-small {
+      padding: 0 10px !important;
+    }
+
     > * {
       font-size: 30px !important;
     }
@@ -132,6 +148,10 @@ a {
       color: inherit;
       margin: 0 0 8px 0;
       line-height: normal;
+
+      @include only-small {
+        font-size: 3.8rem;
+      }
     }
 
     &-sponsor {
@@ -142,6 +162,10 @@ a {
       margin: 0 0 5px 0;
       line-height: normal;
 
+      @include only-small {
+        font-size: 1.5rem;
+      }
+
       &-logo {
         display: inline-block;
         background-color: white;
@@ -151,6 +175,10 @@ a {
 
         img {
           height: 45px;
+
+          @include only-small {
+            height: 30px;
+          }
         }
       }
     }
@@ -159,6 +187,10 @@ a {
   &-message {
     margin-top: 10px;
     font-size: 1.1rem;
+
+    @include only-small {
+      font-size: 0.9rem;
+    }
   }
 }
 
