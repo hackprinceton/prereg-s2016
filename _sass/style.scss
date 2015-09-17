@@ -120,6 +120,16 @@ a {
   }
 }
 
+.flex-grow {
+  &-small {
+    flex-grow: 1;
+  }
+
+  &-large {
+    flex-grow: 3;
+  }
+}
+
 .home-top {
   overflow: hidden;
   display: flex;
