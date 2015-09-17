@@ -210,6 +210,7 @@ a {
     text-align: right;
     border-bottom: 4px solid $hp-orange;
     margin-bottom: 30px;
+    color: inherit;
 
     @include only-small {
       width: auto;
@@ -226,6 +227,15 @@ a {
 
     .home-section-title {
       border-bottom-color: white;
+    }
+  }
+
+  &-gray {
+    background-color: $hp-gray;
+    color: white;
+
+    .home-section-title {
+      border-bottom-color: $hp-orange;
     }
   }
 }
@@ -310,6 +320,7 @@ a {
   &-title {
     font-size: inherit;
     font-weight: bold;
+    color: inherit;
   }
 }
 
@@ -317,6 +328,7 @@ table.plain-table {
   border: 0;
   border-spacing: 0;
   margin: 0;
+  background: none;
 
   tr {
     background: none;
