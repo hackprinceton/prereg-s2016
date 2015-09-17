@@ -92,7 +92,9 @@
                     min: position.top - homeNavHeight,
                     max: position.top - homeNavHeight + $elem.outerHeight(),
                     onEnter: function (element, position) {
-                        $(".home-nav").find("a").removeClass("active");
+                        $(".home-nav")
+                            .css({"background-color": $elem.css("background-color")})
+                            .find("a").removeClass("active").css({"color": $elem.css("color")});
                         $targetNav.addClass("active");
                     }
                 });
