@@ -132,9 +132,9 @@
       <div class="row">
         <div class="large-12 columns">
           <div class="sponsors text-center">
-            {% for tier_hash in site.data.tiers %}
-            {% assign tier_name = tier_hash[0] %}
-            {% assign tier = tier_hash[1] %}
+            {% for tier_hash in site.data.tiersorder %}
+            {% assign tier_name = tier_hash["tier"] %}
+            {% assign tier = site.data.tiers[tier_name] %}
             <div class="sponsors-{{tier_name}}">
               {% for sponsor in tier %}
               <a href="{{sponsor.Website}}" target="_blank">

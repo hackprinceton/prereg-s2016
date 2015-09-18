@@ -435,25 +435,25 @@ table.plain-table {
   }
 
   @include only-large {
-    .sponsors-1-title a {
+    .sponsors-title a {
       width: 65%;
     }
-    .sponsors-2-series-b a {
+    .sponsors-series-b a {
       width: 50%;
     }
-    .sponsors-3-series-a a {
+    .sponsors-series-a a {
       width: 32%;
     }
-    .sponsors-4-angel a {
+    .sponsors-angel a {
       width: 30%;
     }
-    .sponsors-5-seed a {
+    .sponsors-seed a {
       width: 22%;
     }
-    .sponsors-6-other a {
+    .sponsors-other a {
       width: 20%;
     }
-    .sponsors-7-princeton a {
+    .sponsors-princeton a {
       width: 25%;
     }
   }
