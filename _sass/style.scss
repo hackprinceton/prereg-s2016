@@ -68,7 +68,7 @@ body {
   background-color: $hp-orange;
 
   &:hover, &:focus, &.disabled, &[disabled] {
-    background-color: scale-color($hp-orange, $lightness: -20%);
+    background-color: scale-color($hp-orange, $lightness: -20%) !important;
   }
 }
 
