@@ -48,6 +48,22 @@ body {
   }
 }
 
+@mixin display-flex {
+  // https://css-tricks.com/using-flexbox/
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+@mixin prefix($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -mz-#{$property}: $value;
+  #{$property}: $value;
+}
+
 .button-orange {
   background-color: $hp-orange;
 
@@ -81,8 +97,8 @@ a {
 .subscribe {
   margin: 20px auto;
   max-width: 400px;
-  display: flex;
-  flex-direction: row;
+  @include display-flex;
+  @include prefix(flex-direction, row);
   align-items: stretch;
 
   &-input {
@@ -122,11 +138,11 @@ a {
 
 .flex-grow {
   &-small {
-    flex-grow: 1;
+    @include prefix(flex-grow, 1);
   }
 
   &-large {
-    flex-grow: 3;
+    @include prefix(flex-grow, 3);
   }
 }
 
@@ -138,9 +154,9 @@ a {
 
 .home-top {
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include display-flex;
+  @include prefix(flex-direction, column);
+  @include prefix(justify-content, space-between);
 
   &-upper {
     margin: 20px 0;
@@ -261,12 +277,12 @@ a {
 }
 
 .schedule {
-  display: flex;
-  flex-direction: row;
+  @include display-flex;
+  @include prefix(flex-direction, row);
   margin-bottom: 20px;
 
   @include not-large {
-    flex-direction: column;
+    @include prefix(flex-direction, column);
   }
 
   &-day-column {
@@ -275,7 +291,7 @@ a {
     font-weight: bold;
     padding-right: 20px;
     width: 120px;
-    flex-shrink: 0;
+    @include prefix(flex-shrink, 0);
 
     @include not-large {
       text-align: left;
