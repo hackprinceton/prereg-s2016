@@ -60,7 +60,7 @@ body {
 @mixin prefix($property, $value) {
   -webkit-#{$property}: $value;
   -moz-#{$property}: $value;
-  -mz-#{$property}: $value;
+  -ms-#{$property}: $value;
   #{$property}: $value;
 }
 
