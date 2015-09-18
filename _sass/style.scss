@@ -130,6 +130,12 @@ a {
   }
 }
 
+.light-text {
+  &.color-gray, .color-gray & {
+    color: $hp-gray-text !important;
+  }
+}
+
 .home-top {
   overflow: hidden;
   display: flex;
