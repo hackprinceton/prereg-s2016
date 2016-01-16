@@ -1,9 +1,13 @@
 @import "hp-colors";
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700);
 
-// TODO: update to final fonts
+// TODO: rename and refactor all to use mixins
 $font-header: "Dense-Regular", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+@mixin font-subheading {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  letter-spacing: 0.2em;
+}
 $font-body: "proxima-nova", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 
 // TODO: constants should derive directly from Foundation settings
@@ -36,11 +40,11 @@ body {
 
 @mixin rounded-form-element {
   border-width: 0 !important;
-  border-radius: 6px !important;
+  border-radius: 12px !important;
   padding: 16px !important;
   height: auto !important;
-  font-size: 1.05rem !important;
   box-shadow: none !important;
+  margin: 0 10px !important;
 
   @include only-small {
     padding: 12px !important;
@@ -64,21 +68,17 @@ body {
   #{$property}: $value;
 }
 
-.button-orange {
-  background-color: $hp-orange;
+@mixin hover-color($property, $color) {
+  #{$property}: $color;
+  transition: $property 200ms ease-out;
 
   &:hover, &:focus, &.disabled, &[disabled] {
-    background-color: scale-color($hp-orange, $lightness: -20%) !important;
+    #{$property}: scale-color($color, $lightness: -20%) !important;
   }
 }
 
 a {
-  color: $hp-orange;
-  transition: color 300ms ease-out;
-
-  &:hover, &:focus {
-    color: scale_color($hp-orange, $lightness: -14%);
-  }
+  @include hover-color(color, $hp-magenta);
 
   &.color-white, .home-section-orange & {
     color: white;
@@ -89,40 +89,57 @@ a {
   }
 }
 
-.color-gray {
-  background-color: $hp-gray;
+@mixin bg-base {
+  background-position-x: center;
+  background-position-y: 0;
+  background-repeat: repeat-y;
+  background-size: 100%;
+}
+
+.bg-blue {
+  @include bg-base;
+  background-image: url("/img/blue_background.png");
   color: white;
+}
+
+.bg-gray {
+  @include bg-base;
+  background-image: url("/img/gray_background.png");
+  color: black;
+}
+
+button {
+  @include rounded-form-element;
+  @include font-subheading;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+input {
+  @include rounded-form-element;
 }
 
 .subscribe {
   margin: 20px auto;
-  max-width: 400px;
+  max-width: 500px;
   @include display-flex;
   @include prefix(flex-direction, row);
   align-items: stretch;
 
   &-input {
-    @include rounded-form-element;
-    margin: 0 3px 0 0 !important;
+    width: auto !important;
+    flex-grow: 1;
+    min-width: 0;
   }
 
   &-button {
-    @include rounded-form-element;
-    margin: 0;
-    padding: 0 10px !important;
-
-    @include only-small {
-      padding: 0 10px !important;
-    }
-
-    > * {
-      font-size: 30px !important;
-
-      @include only-small {
-        font-size: 20px !important;
-      }
-    }
+    flex-shrink: 0;
   }
+}
+
+.action-button {
+  @include hover-color(background-color, $hp-magenta);
 }
 
 .full-height {
@@ -146,14 +163,7 @@ a {
   }
 }
 
-.light-text {
-  &.color-gray, .color-gray & {
-    color: $hp-gray-text !important;
-  }
-}
-
 .home-top {
-  overflow: hidden;
   @include display-flex;
   @include prefix(flex-direction, column);
   @include prefix(justify-content, space-between);
@@ -224,15 +234,11 @@ a {
       }
     }
   }
+}
 
-  &-message {
-    margin-top: 10px;
-    font-size: 0.9rem;
-
-    @include only-small {
-      font-size: 0.8rem;
-    }
-  }
+.home-subscribe-message {
+  @include font-subheading;
+  text-transform: uppercase;
 }
 
 .home-section {
@@ -240,43 +246,20 @@ a {
 
   padding: 70px 0;
   background-color: white;
-  color: black;
 
   &-title {
     font-family: $font-header;
-    font-size: 3rem;
-    line-height: 1.2;
-    width: calc(50% - (#{$row-max-width} / 2) + #{$home-section-title-width}); // makes it stick out $home-section-title-width into the row
-    min-width: $home-section-title-width;
-    text-align: right;
-    border-bottom: 4px solid $hp-orange;
-    margin-bottom: 30px;
-    color: inherit;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    margin: 0 0 5px;
+    font-weight: bold;
 
-    @include only-small {
-      width: auto;
-      min-width: 0;
-      padding-left: 0.9375rem;
-      float: left;
-      clear: both;
+    &-emphasis {
+      color: $hp-magenta;
     }
-  }
 
-  &-orange {
-    background-color: $hp-orange;
-    color: black;
-
-    .home-section-title {
-      border-bottom-color: white;
-    }
-  }
-
-  &-gray {
-    background-color: $hp-gray;
-    color: white;
-
-    .home-section-title {
-      border-bottom-color: $hp-orange;
+    &-yellow {
+      color: $hp-yellow;
     }
   }
 }
@@ -332,36 +315,14 @@ a {
   transform: translate(-50%, -50%); // TODO: ensure autoprefixer is in use
 }
 
-.vertical-bar {
-  &:before {
-    content: "";
-    width: 2px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-  }
-
-  &-orange {
-    &:before {
-      background-color: $hp-orange;
-    }
-  }
-
-  &-white {
-    &:before {
-      background-color: white;
-    }
-  }
-}
-
 .faq {
-  position: relative;
-  padding: 0 20px;
+  //position: relative;
+  //padding: 0 20px;
 
   &-title {
     font-size: inherit;
     font-weight: bold;
-    color: inherit;
+    color: $hp-yellow;
   }
 }
 
@@ -384,9 +345,11 @@ table.plain-table {
 
 .home-nav {
   text-align: center;
-  transition: background-color 300ms ease-out;
+  background-color: white;
   overflow-x: auto;
   white-space: nowrap;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 
   ul {
     list-style: none;
@@ -400,17 +363,23 @@ table.plain-table {
   a {
     display: block;
     line-height: 60px;
-    font-family: $font-header;
-    font-size: 1.6rem;
+    @include font-subheading;
+    letter-spacing: normal;
+    font-weight: bold;
+    font-size: 1.1rem;
     padding: 0 20px;
+    width: 150px;
+    text-transform: uppercase;
+    color: black;
 
     @include only-small {
       padding-left: 10px;
       padding-right: 10px;
+      width: auto;
     }
 
     &.active {
-      font-weight: bold;
+      color: $hp-blue;
     }
   }
 }
