@@ -99,13 +99,13 @@ a {
 
 .bg-blue {
   @include bg-base;
-  background-image: url("/img/blue_background.png");
+  background-image: url("/img/blue_background.jpg");
   color: white;
 }
 
 .bg-gray {
   @include bg-base;
-  background-image: url("/img/gray_background.png");
+  background-image: url("/img/gray_background.jpg");
   color: black;
 }
 
