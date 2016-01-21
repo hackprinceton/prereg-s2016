@@ -91,10 +91,10 @@
       </div>
     </div>
 
-    <div id="sponsors" class="home-section bg-gray">
+    <div id="sponsors" class="home-section">
       <div class="row">
         <div class="large-12 columns">
-          <h2 class="home-section-title"><span class="home-section-title-emphasis">Proudly</span> sponsored by</h2>
+          <h2 class="home-section-title"><span class="home-section-title-emphasis">Past</span> Sponsors</h2>
           <div class="sponsors text-center">
             {% for tier_hash in site.data.tiersorder %}
             {% assign tier_name = tier_hash["tier"] %}
@@ -111,6 +111,17 @@
         </div>
       </div>
     </div>
+
+    <div id="footer" class="home-section home-section-slim bg-blue text-center footer-text">
+      <div class="row">
+        <div class="large-12 columns">
+          &copy; 2016 <a href="http://www.princetoneclub.com/" target="_blank">Princeton Entrepreneurship Club</a>. <br/>
+          <a href="mailto:{{ site.email }}">Email</a> &bull; <a href="{{ site.facebook }}" target="_blank">Facebook</a> &bull; <a href="{{ site.twitter }}" target="_blank">Twitter</a> &bull; <a href="{{ site.instagram }}" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <a id="mlh-trust-badge" style="position: absolute;top:0;right:50px;max-width:80px;width:10%;min-width: 50px;display:block;z-index:10000" href="https://mlh.io/seasons/s2016/events?utm_source=s2016&utm_medium=TrustBadge&utm_campaign=s2016" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/s2016.png" alt="MLH Official - Spring 2016" style="width:100%;" ></a>
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
