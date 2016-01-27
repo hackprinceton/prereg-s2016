@@ -363,10 +363,22 @@ input {
   //position: relative;
   //padding: 0 20px;
 
+  &-decoration {
+    width: 18px;
+    height: 18px;
+    margin-bottom: -18px;
+    border-radius: 100%;
+    background-color: $hp-magenta;
+    position: relative;
+    top: 4px;
+    left: -10px;
+  }
+
   &-title {
     font-size: inherit;
     font-weight: bold;
     color: $hp-yellow;
+    position: relative;
   }
 }
 
