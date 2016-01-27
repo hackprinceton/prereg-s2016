@@ -3,10 +3,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href="css/style.scss"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HackPrinceton Fall 2015</title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <title>HackPrinceton Spring 2016</title>
     <link rel="stylesheet" href="css/MyFontsWebfontsKit.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/vendor/modernizr.js"></script>
@@ -30,96 +30,84 @@
   </head>
   <body>
 
-    <div id="home" class="color-gray">
-      <div class="home-top full-height-before-nav text-center">
-        <div class="row flex-grow-large">
-          <div class="small-12 columns">
-            <div class="home-top-upper">
-              <h2 class="home-top-date">Fall 2015</h2>
-            </div>
+    <div id="home" class="bg-blue home-top full-height-before-nav text-center">
+      <div class="bg-float" style="background-image: url(/img/1yellowstars.png);"></div>
+      <div class="bg-float" style="background-image: url(/img/1planets.png);"></div>
+
+      <div class="flex-grow-large"></div>
+
+      <div class="row">
+        <div class="small-10 small-offset-1 columns">
+          <div class="home-top-brand">
+            <img class="home-top-brand-logo" src="img/1hackprinceton.png" />
+            <h1 class="hide">HackPrinceton Spring 2016</h1>
           </div>
         </div>
+      </div>
 
-        <div class="row flex-grow-small">
-          <div class="small-12 columns">
-            <div class="home-top-brand">
-              <img class="home-top-brand-logo" src="img/hp-orange.png" />
-              <h1 class="home-top-brand-title">HackPrinceton</h1>
-              <h3 class="home-top-brand-sponsor light-text">sponsored by
-                <a href="https://www.privateinternetaccess.com/" target="_blank">
-                  <span class="home-top-brand-sponsor-logo">
-                    <img src="img/sponsors/pia.png" alt="Private Internet Access" />
-                  </span>
-                </a>
-              </h3>
-            </div>
-          </div>
+      <div class="flex-grow-small"></div>
+
+      <div class="row">
+        <div class="small-12 columns">
+          <p class="home-subscribe-message">Sign up for more information</p>
+
+          <form action="//hackprinceton.us3.list-manage.com/subscribe/post?u=53efbc735a8d749c8eca8db43&amp;id=d0427974de" method="post" id="subscribe" class="subscribe">
+            <input type="email" name="EMAIL" class="subscribe-input" placeholder="Email..." required />
+            <button type="submit" class="action-button subscribe-button">
+              <i></i> <span>Get Updates</span>
+            </button>
+          </form>
         </div>
+      </div>
 
-        <div class="row flex-grow-large">
-          <div class="small-12 columns">
-            <div class="home-top-lower">
-              <form action="//hackprinceton.us3.list-manage.com/subscribe/post?u=53efbc735a8d749c8eca8db43&amp;id=d0427974de" method="post" id="subscribe" class="subscribe">
-                <input type="email" name="EMAIL" class="subscribe-input" placeholder="Subscribe for email updates" required />
-                <button type="submit" class="button-orange subscribe-button"><i class="fa fa-fw fa-envelope-o"></i></button>
-              </form>
+      <div class="flex-grow-large"></div>
 
-              <p class="home-top-message light-text">
-                Applications for the spring are opening soon &mdash; subscribe to be the first to know.<br/>
-                Thinking about sponsoring? Send us an email at <a href="mailto:hackprinceton@princetoneclub.com">hackprinceton@princetoneclub.com</a>.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="sticky">
-          <nav class="home-nav color-gray" data-topbar role="navigation">
-            <ul>
-              <li><a class="color-white" href="#home">Home</a></li>
-              <li><a class="color-white" href="#about">About</a></li>
-              <li><a class="color-white" href="#faq">FAQ</a></li>
-              <li><a class="color-white" href="#sponsors">Sponsors</a></li>
-            </ul>
-          </nav>
-        </div>
+      <div class="sticky">
+        <nav class="home-nav" data-topbar role="navigation">
+          <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#sponsors">Sponsors</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
 
-    <div id="about" class="home-section home-section-orange">
+    <div id="about" class="home-section bg-gray">
       <div class="row">
         <div class="medium-8 medium-offset-2 end columns">
-          <p> HackPrinceton Fall 2015 is over! Thanks to everyone who came and contributed to make the event awesome. Check out the <a href="http://hackprincetonf2015.devpost.com/?ref_content=default&ref_feature=challenge&ref_medium=discover">final projects</a> and <a href="https://www.facebook.com/media/set/?set=a.1021189361265075.1073742036.591858720864810&type=3">photos</a> from the event! Also be sure to follow us on <a href="https://www.facebook.com/hackprinceton">Facebook</a>, <a href="https://twitter.com/hackprinceton">Twitter</a>, and <a href="https://www.instagram.com/hackprinceton/">Instagram</a>! Remember to subscribe for more information about our upcoming spring hackathon.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="home-section">
-      <h1 class="home-section-title">About</h1>
-      <div class="row">
-        <div class="medium-8 medium-offset-2 end columns">
-          <p>HackPrinceton brings together over 600 of the nation's most promising developers and designers to create incredible software and hardware projects. Meet fellow hackers, learn new technologies, and hone your skills alongside seasoned mentors. Whether you’re making your first mobile app or are ready to jump onboard the most developed hardware track in the country, join us for 36 glorious hours of learning.</p>
+          <div class="header-comet"></div>
+          <h2 class="home-section-title position-relative"><span class="home-section-title-emphasis">Explore</span> with us</h2>
+          <p>HackPrinceton brings together 450 of the nation's most promising developers and designers to create incredible software and hardware projects. Meet fellow hackers, learn new technologies, and hone your skills along seasoned mentors. Whether you're making your first mobile app or are ready to jump onboard the most developed hardware track in the country, join us for 36 glorious hours of hacking.</p>
         </div>
       </div>
     </div>
 
-    <div id="faq" class="home-section home-section-gray">
-      <h1 class="home-section-title">FAQ</h1>
+    <div id="faq" class="home-section bg-blue">
       <div class="row">
-        <div class="medium-6 medium-offset-3 columns end">
-          {% for faq in site.data.faq %}
-          <div class="faq vertical-bar vertical-bar-orange">
-            <h2 class="faq-title">{{faq.question}}</h2>
-            <p>{{faq.answer}}</p>
+        <div class="medium-12 large-10 large-offset-1 columns end">
+          <h2 class="home-section-title home-section-title-yellow">FAQs</h2>
+
+          <div class="faq-wrap">
+            <div class="faq-sizer"></div>
+            {% for faq in site.data.faq %}
+            <div class="faq">
+              <div class="faq-decoration"></div>
+              <h2 class="faq-title">{{faq.question}}</h2>
+              <p>{{faq.answer}}</p>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
       </div>
     </div>
 
     <div id="sponsors" class="home-section">
-      <h1 class="home-section-title">Sponsors</h1>
       <div class="row">
         <div class="large-12 columns">
+          <div class="header-rocket"></div>
+          <h2 class="home-section-title"><span class="home-section-title-emphasis">Past</span> Sponsors</h2>
           <div class="sponsors text-center">
             {% for tier_hash in site.data.tiersorder %}
             {% assign tier_name = tier_hash["tier"] %}
@@ -137,10 +125,24 @@
       </div>
     </div>
 
+    <div id="footer" class="home-section home-section-slim bg-blue text-center footer-text">
+      <div class="row">
+        <div class="large-12 columns">
+          &copy; 2016 <a href="http://www.princetoneclub.com/" target="_blank">Princeton Entrepreneurship Club</a>. <br/>
+          <a href="mailto:{{ site.email }}">Email</a> &bull; <a href="{{ site.facebook }}" target="_blank">Facebook</a> &bull; <a href="{{ site.twitter }}" target="_blank">Twitter</a> &bull; <a href="{{ site.instagram }}" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <a id="mlh-trust-badge" href="https://mlh.io/seasons/s2016/events?utm_source=s2016&utm_medium=TrustBadge&utm_campaign=s2016" target="_blank">
+      <img src="https://s3.amazonaws.com/logged-assets/trust-badge/s2016.png" alt="MLH Official - Spring 2016">
+    </a>
+
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/vendor/jquery-shake/jquery.ui.shake.min.js"></script>
     <script src="js/vendor/jquery-scrollspy.js"></script>
+    <script src="js/vendor/masonry.pkgd.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
