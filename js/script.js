@@ -1,7 +1,6 @@
 (function () {
 
     $(document).foundation();
-    $.stellar();
 
     function SubscribeForm($form) {
         this._$form = $form;
