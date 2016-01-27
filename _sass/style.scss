@@ -193,7 +193,7 @@ input {
   }
 
   &-large {
-    @include prefix(flex-grow, 3);
+    @include prefix(flex-grow, 5);
   }
 }
 
@@ -201,6 +201,10 @@ input {
   @include display-flex;
   @include prefix(flex-direction, column);
   @include prefix(justify-content, space-between);
+
+  > * {
+    flex-basis: 0;
+  }
 
   &-upper {
     margin: 20px 0;
