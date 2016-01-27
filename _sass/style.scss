@@ -360,8 +360,24 @@ input {
 }
 
 .faq {
-  //position: relative;
-  //padding: 0 20px;
+  &-wrap {
+    margin: 0 -20px;
+
+    @include only-small {
+      margin: 0;
+    }
+  }
+
+  &, &-sizer {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0 20px;
+
+    @include only-small {
+      width: auto;
+      padding: 0;
+    }
+  }
 
   &-decoration {
     width: 18px;

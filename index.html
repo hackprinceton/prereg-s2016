@@ -84,16 +84,19 @@
 
     <div id="faq" class="home-section bg-blue">
       <div class="row">
-        <div class="medium-6 medium-offset-3 columns end">
+        <div class="medium-12 large-10 large-offset-1 columns end">
           <h2 class="home-section-title home-section-title-yellow">FAQs</h2>
 
-          {% for faq in site.data.faq %}
-          <div class="faq">
-            <div class="faq-decoration"></div>
-            <h2 class="faq-title">{{faq.question}}</h2>
-            <p>{{faq.answer}}</p>
+          <div class="faq-wrap">
+            <div class="faq-sizer"></div>
+            {% for faq in site.data.faq %}
+            <div class="faq">
+              <div class="faq-decoration"></div>
+              <h2 class="faq-title">{{faq.question}}</h2>
+              <p>{{faq.answer}}</p>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
       </div>
     </div>
@@ -137,6 +140,7 @@
     <script src="js/foundation.min.js"></script>
     <script src="js/vendor/jquery-shake/jquery.ui.shake.min.js"></script>
     <script src="js/vendor/jquery-scrollspy.js"></script>
+    <script src="js/vendor/masonry.pkgd.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

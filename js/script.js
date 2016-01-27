@@ -2,6 +2,12 @@
 
     $(document).foundation();
 
+    $('.faq-wrap').masonry({
+        itemSelector: '.faq',
+        columnWidth: '.faq-sizer',
+        percentPosition: true
+    });
+
     function SubscribeForm($form) {
         this._$form = $form;
         this._$input = $form.find("input[type='email']");
