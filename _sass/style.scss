@@ -505,3 +505,29 @@ table.plain-table {
     width: 100%;
   }
 }
+
+.header-comet {
+  position: relative;
+  top: -32px;
+  left: -107px;
+  width: 150px;
+  height: 150px;
+  margin-bottom: -150px;
+  background: url(/img/comet.png) no-repeat;
+  background-size: contain;
+}
+
+.header-rocket {
+  position: relative;
+  top: -33px;
+  left: -125px;
+  width: 150px;
+  height: 150px;
+  margin-bottom: -150px;
+  background: url(/img/rocket.png) no-repeat;
+  background-size: contain;
+}
+
+.position-relative {
+  position: relative;
+}
