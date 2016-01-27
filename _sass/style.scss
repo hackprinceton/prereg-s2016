@@ -3,6 +3,9 @@
 @import "hp-colors";
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700);
 
+$nav-height: 60px;
+$nav-height-mobile: 40px;
+
 @mixin font-heading {
   font-family: "Dense-Regular", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
@@ -44,11 +47,10 @@ body {
   padding: 16px !important;
   height: auto !important;
   box-shadow: none !important;
-  margin: 0 10px !important;
+  margin: 0 0 10px 0 !important;
 
   @include only-small {
     padding: 12px !important;
-    font-size: 1rem !important;
   }
 }
 
@@ -90,11 +92,10 @@ a {
 }
 
 @mixin bg-base {
-  background-position-x: center;
-  background-position-y: 0;
+  background-position-x: center !important;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .bg-blue {
@@ -118,6 +119,7 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
+  background-attachment: scroll;
 }
 
 button {
@@ -126,6 +128,10 @@ button {
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: bold;
+
+  @include only-small {
+    font-size: 0.7rem;
+  }
 }
 
 input {
@@ -143,10 +149,22 @@ input {
     width: auto !important;
     flex-grow: 1;
     min-width: 0;
+    margin: 0 10px 10px !important;
+    align-self: stretch;
   }
 
   &-button {
     flex-shrink: 0;
+    margin: 0 10px 10px !important;
+
+    @include only-small {
+      margin-top: 10px !important;
+    }
+  }
+
+  @include only-small {
+    @include prefix(flex-direction, column);
+    align-items: center;
   }
 }
 
@@ -161,7 +179,11 @@ input {
 
   // Handle spacing when nav is fixed
   &, .f-topbar-fixed &-before-nav {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - #{$nav-height});
+
+    @include only-small {
+      min-height: calc(100vh - #{$nav-height-mobile});
+    }
   }
 }
 
@@ -195,7 +217,8 @@ input {
 
   &-brand {
     &-logo {
-      max-width: 42%;
+      width: 400px;
+      max-width: 95%;
       margin-bottom: 20px;
     }
 
@@ -251,6 +274,11 @@ input {
 .home-subscribe-message {
   @include font-subheading;
   text-transform: uppercase;
+
+  @include only-small {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
 }
 
 .home-section {
@@ -379,7 +407,7 @@ table.plain-table {
 
   a {
     display: block;
-    line-height: 60px;
+    line-height: $nav-height;
     @include font-subheading;
     letter-spacing: normal;
     font-weight: bold;
@@ -392,6 +420,8 @@ table.plain-table {
     @include only-small {
       padding-left: 10px;
       padding-right: 10px;
+      line-height: $nav-height-mobile;
+      font-size: 0.95rem;
       width: auto;
     }
 
@@ -455,4 +485,23 @@ table.plain-table {
   text-transform: uppercase;
   font-size: 0.8rem;
   line-height: 1.8;
+}
+
+#mlh-trust-badge {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  max-width: 80px;
+  width: 10%;
+  min-width: 50px;
+  display: block;
+  z-index: 10000;
+
+  @include only-small {
+    right: 15px;
+  }
+
+  img {
+    width: 100%;
+  }
 }
