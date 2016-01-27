@@ -92,8 +92,8 @@ a {
 @mixin bg-base {
   background-position-x: center;
   background-position-y: 0;
-  background-repeat: repeat-y;
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
 }
 
