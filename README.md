@@ -1,2 +1,2 @@
-# hackprinceton-f15-prereg
-Pre-registration site for HackPrinceton Fall 2015
+# hackprinceton-s16-prereg
+Pre-registration site for HackPrinceton Spring 2016
