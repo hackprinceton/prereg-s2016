@@ -12,7 +12,8 @@
         this._$form = $form;
         this._$input = $form.find("input[type='email']");
         this._$button = $form.find("button[type='submit']");
-        this._$icon = this._$button.find(".fa");
+        this._$icon = this._$button.find("i");
+        this._$text = this._$button.find("span");
         this._currentState = "ready";
 
         $form.submit(this._onSubmit.bind(this));
@@ -52,8 +53,17 @@
             this._$button.removeAttr("disabled");
         }
     };
+    SubscribeForm.prototype._hideIcon = function () {
+        this._$icon.hide();
+    };
+    SubscribeForm.prototype._hideText = function () {
+        this._setText("");
+    };
     SubscribeForm.prototype._setIconClass = function (iconClass) {
-        this._$icon.attr("class", "fa fa-fw " + iconClass);
+        this._$icon.show().attr("class", "fa fa-fw " + iconClass);
+    };
+    SubscribeForm.prototype._setText = function (text) {
+        this._$text.text(text);
     };
     SubscribeForm.prototype._setNextState = function (nextState, timeout) {
         this._timeout = setTimeout(function () {
@@ -65,18 +75,22 @@
         switch (state) {
             case "ready":
                 this._setDisabled(false);
-                this._setIconClass("fa-envelope-o");
+                this._hideIcon();
+                this._setText("Get Updates");
                 break;
             case "loading":
                 this._setDisabled(true);
+                this._setText("Loading");
                 this._setIconClass("fa-circle-o-notch fa-spin");
                 break;
             case "error":
                 this._setDisabled(false);
+                this._setText("Invalid");
                 this._setIconClass("fa-exclamation-triangle");
                 break;
             case "success":
                 this._setDisabled(true);
+                this._setText("Success");
                 this._setIconClass("fa-check");
                 this._setNextState("ready", 2000);
                 break;
