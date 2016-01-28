@@ -422,6 +422,9 @@ table.plain-table {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 1000;
+  @include display-flex;
+  @include prefix(flex-direction, row);
+  @include prefix(justify-content, center);
 
   ul {
     list-style: none;
@@ -439,8 +442,7 @@ table.plain-table {
     letter-spacing: normal;
     font-weight: bold;
     font-size: 1.1rem;
-    padding: 0 20px;
-    width: 150px;
+    padding: 0 45px;
     text-transform: uppercase;
     color: black;
 
