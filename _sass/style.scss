@@ -514,6 +514,14 @@ table.plain-table {
   text-transform: uppercase;
   font-size: 0.8rem;
   line-height: 1.8;
+
+  a {
+    color: inherit;
+  }
+
+  &-fade {
+    color: darken(white, 30%);
+  }
 }
 
 #mlh-trust-badge {
