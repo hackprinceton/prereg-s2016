@@ -120,6 +120,18 @@
             </div>
             {% endfor %}
           </div>
+
+          <div class="header-rocket"></div>
+          <h2 class="home-section-title">In <span class="home-section-title-emphasis">Partnership</span> With</h2>
+          <div class="sponsors text-center">
+            <div class="sponsors-partners">
+              {% for sponsor in site.data.partners %}
+              <a href="{{sponsor.Website}}" target="_blank">
+                <img src="img/sponsors/{{sponsor.Logo}}" alt="{{sponsor.Sponsor}}" />
+              </a>
+              {% endfor %}
+            </div>
+          </div>
         </div>
       </div>
     </div>
