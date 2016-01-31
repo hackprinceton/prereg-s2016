@@ -1,29 +1,5 @@
 (function () {
 
-    $(document).foundation();
-
-    $('.faq-wrap').masonry({
-        itemSelector: '.faq',
-        columnWidth: '.faq-sizer',
-        percentPosition: true
-    });
-
-    var bLazy = new Blazy();
-
-    // https://gist.github.com/flesler/3f3e1166690108abf747
-    $("body").on("click", "a[href^='#']", function (e) {
-        e.preventDefault();
-        history.pushState(null, null, this.hash);
-        var offsetTop = -$(".home-nav").height();
-        $(window).stop(true).scrollTo(this.hash, {
-            duration: 500,
-            interrupt: true,
-            offset: {
-                top: offsetTop
-            }
-        });
-    });
-
     function SubscribeForm($form) {
         this._$form = $form;
         this._$input = $form.find("input[type='email']");
@@ -133,6 +109,30 @@
                     }
                 });
             }
+        });
+
+        $(document).foundation();
+
+        $('.faq-wrap').masonry({
+            itemSelector: '.faq',
+            columnWidth: '.faq-sizer',
+            percentPosition: true
+        });
+
+        var bLazy = new Blazy();
+
+        // https://gist.github.com/flesler/3f3e1166690108abf747
+        $("body").on("click", "a[href^='#']", function (e) {
+            e.preventDefault();
+            history.pushState(null, null, this.hash);
+            var offsetTop = -$(".home-nav").height();
+            $(window).stop(true).scrollTo(this.hash, {
+                duration: 500,
+                interrupt: true,
+                offset: {
+                    top: offsetTop
+                }
+            });
         });
     });
 
