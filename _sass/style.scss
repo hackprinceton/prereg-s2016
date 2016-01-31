@@ -118,6 +118,17 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
+
+  &.b-lazy {
+    @include prefix(transition, (opacity 500ms ease-in-out, transform 500ms ease-in-out));
+    @include prefix(transform, scale(1.01));
+    opacity: 0;
+  }
+
+  &.b-loaded {
+    @include prefix(transform, scale(1));
+    opacity: 1;
+  }
 }
 
 button {

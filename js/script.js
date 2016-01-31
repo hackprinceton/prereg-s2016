@@ -8,6 +8,8 @@
         percentPosition: true
     });
 
+    var bLazy = new Blazy();
+
     function SubscribeForm($form) {
         this._$form = $form;
         this._$input = $form.find("input[type='email']");
